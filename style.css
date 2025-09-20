@@ -1,0 +1,840 @@
+/* Enhanced Sleep Analysis Dashboard Styles - Modern & Interactive */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 25%, #2a2f3e 50%, #1a1f2e 75%, #0a0f1c 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(75, 156, 211, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    z-index: -1;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-10px, -10px) scale(1.02); }
+    50% { transform: translate(10px, -5px) scale(0.98); }
+    75% { transform: translate(-5px, 10px) scale(1.01); }
+}
+
+/* Enhanced Sidebar */
+.css-1d391kg {
+    background: linear-gradient(180deg, #0f1419 0%, #1a1f2e 50%, #0f1419 100%);
+    padding: 2rem;
+    border-right: 1px solid rgba(75, 156, 211, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content Headers */
+h1 {
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA, #93C5FD, #DBEAFE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { filter: drop-shadow(0 0 5px rgba(75, 156, 211, 0.3)); }
+    100% { filter: drop-shadow(0 0 20px rgba(75, 156, 211, 0.6)); }
+}
+
+h2 {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h3 {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Enhanced Metric Cards with 3D Effects */
+.metric-card {
+    background: linear-gradient(135deg, rgba(30, 42, 58, 0.95), rgba(75, 156, 211, 0.15));
+    border: 1px solid rgba(75, 156, 211, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(75, 156, 211, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4B9CD3, #60A5FA, #93C5FD, #DBEAFE);
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.metric-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(75, 156, 211, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 
+        0 20px 60px rgba(75, 156, 211, 0.3),
+        0 0 0 1px rgba(75, 156, 211, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(75, 156, 211, 0.6);
+}
+
+.metric-card:hover::after {
+    opacity: 1;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.metric-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #E5E7EB;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-card p {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #4B9CD3;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: numberCount 2s ease-out;
+}
+
+@keyframes numberCount {
+    from { 
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Enhanced Tabs with Glassmorphism */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 12px;
+    margin: 2rem 0;
+    padding: 12px;
+    background: rgba(30, 42, 58, 0.6);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(75, 156, 211, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 52px;
+    white-space: pre-wrap;
+    background: transparent;
+    border-radius: 12px;
+    gap: 10px;
+    padding: 14px 24px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.stTabs [data-baseweb="tab"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.stTabs [data-baseweb="tab"]:hover::before {
+    left: 100%;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: rgba(75, 156, 211, 0.15);
+    border-color: rgba(75, 156, 211, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(75, 156, 211, 0.2);
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA);
+    color: #FFFFFF;
+    box-shadow: 
+        0 8px 25px rgba(75, 156, 211, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Form Elements with Floating Labels */
+.stTextInput, .stTextArea {
+    border-radius: 16px;
+    border: 2px solid rgba(75, 156, 211, 0.3);
+    background: rgba(30, 42, 58, 0.8);
+    color: #FFFFFF;
+    padding: 16px 20px;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    position: relative;
+}
+
+.stTextInput:focus, .stTextArea:focus {
+    border-color: #4B9CD3;
+    box-shadow: 
+        0 0 0 4px rgba(75, 156, 211, 0.1),
+        0 8px 25px rgba(75, 156, 211, 0.2);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* Enhanced Buttons with Modern Design */
+.stButton > button {
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA);
+    color: #FFFFFF;
+    border-radius: 16px;
+    padding: 14px 28px;
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 25px rgba(75, 156, 211, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton > button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.stButton > button:hover::before {
+    left: 100%;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #3A7CA5, #4B9CD3);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 35px rgba(75, 156, 211, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.stButton > button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(75, 156, 211, 0.3);
+}
+
+/* Enhanced Selects and Sliders */
+.stSelectbox, .stRadio {
+    border-radius: 16px;
+    padding: 16px;
+    background: rgba(30, 42, 58, 0.8);
+    border: 2px solid rgba(75, 156, 211, 0.3);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+.stSelectbox:focus, .stRadio:focus {
+    border-color: #4B9CD3;
+    box-shadow: 0 0 0 3px rgba(75, 156, 211, 0.1);
+}
+
+.stSlider {
+    border-radius: 16px;
+    padding: 16px;
+}
+
+/* Enhanced Chat Interface */
+.chat-container {
+    background: linear-gradient(135deg, rgba(30, 42, 58, 0.95), rgba(15, 28, 46, 0.95));
+    border: 1px solid rgba(75, 156, 211, 0.4);
+    border-radius: 24px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(75, 156, 211, 0.1);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(75, 156, 211, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.chat-welcome {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.chat-welcome h2 {
+    color: #4B9CD3;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA, #93C5FD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.chat-welcome p {
+    color: #E5E7EB;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+}
+
+.chat-welcome strong {
+    color: #4B9CD3;
+    font-weight: 700;
+}
+
+.chat-welcome ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-welcome li {
+    background: linear-gradient(135deg, rgba(75, 156, 211, 0.15), rgba(96, 165, 250, 0.1));
+    border: 1px solid rgba(75, 156, 211, 0.4);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: #E5E7EB;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-welcome li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.chat-welcome li:hover::before {
+    left: 100%;
+}
+
+.chat-welcome li:hover {
+    background: linear-gradient(135deg, rgba(75, 156, 211, 0.25), rgba(96, 165, 250, 0.2));
+    transform: translateX(8px) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(75, 156, 211, 0.3);
+    border-color: rgba(75, 156, 211, 0.6);
+}
+
+/* Enhanced Chat Messages */
+.stChatMessage {
+    background: linear-gradient(135deg, rgba(15, 28, 46, 0.95), rgba(30, 42, 58, 0.95));
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(75, 156, 211, 0.1);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stChatMessage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4B9CD3, #60A5FA, #93C5FD);
+}
+
+.stChatMessage:hover {
+    border-color: rgba(75, 156, 211, 0.5);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(75, 156, 211, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Chat Input */
+.stChatInput {
+    background: rgba(30, 42, 58, 0.9);
+    border: 2px solid rgba(75, 156, 211, 0.4);
+    border-radius: 20px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-size: 15px;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.stChatInput:focus-within {
+    border-color: #4B9CD3;
+    box-shadow: 
+        0 0 0 4px rgba(75, 156, 211, 0.1),
+        0 12px 40px rgba(75, 156, 211, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Fix for send button positioning */
+.stChatInput > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stChatInput input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 15px;
+    outline: none;
+    padding: 10px 0;
+}
+
+.stChatInput input::placeholder {
+    color: #9CA3AF;
+    font-style: italic;
+}
+
+/* Send button styling */
+.stChatInput button {
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA);
+    border: none;
+    border-radius: 16px;
+    padding: 12px 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(75, 156, 211, 0.3);
+}
+
+.stChatInput button:hover {
+    background: linear-gradient(135deg, #3A7CA5, #4B9CD3);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(75, 156, 211, 0.4);
+}
+
+.stChatInput button:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Enhanced Info Boxes */
+.stAlert {
+    border-radius: 16px;
+    border: 1px solid rgba(75, 156, 211, 0.4);
+    background: linear-gradient(135deg, rgba(75, 156, 211, 0.15), rgba(96, 165, 250, 0.1));
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced DataFrames */
+.dataframe {
+    background: rgba(30, 42, 58, 0.9);
+    border-radius: 16px;
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Plotly Charts */
+.js-plotly-plot {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(75, 156, 211, 0.1);
+    transition: all 0.3s ease;
+}
+
+.js-plotly-plot:hover {
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(75, 156, 211, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Loading Spinner Enhancement */
+.stSpinner {
+    color: #4B9CD3;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .metric-card {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .chat-container {
+        padding: 2rem;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 42, 58, 0.6);
+    border-radius: 8px;
+    backdrop-filter: blur(20px);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA);
+    border-radius: 8px;
+    border: 2px solid rgba(30, 42, 58, 0.6);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #3A7CA5, #4B9CD3);
+}
+
+/* Animation for metric cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.metric-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered animation for multiple cards */
+.metric-card:nth-child(1) { animation-delay: 0.1s; }
+.metric-card:nth-child(2) { animation-delay: 0.2s; }
+.metric-card:nth-child(3) { animation-delay: 0.3s; }
+.metric-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Pulse animation for important elements */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+.stButton > button:focus {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Floating animation for interactive elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.chat-welcome li:hover {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Glow effect for active elements */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(75, 156, 211, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(75, 156, 211, 0.6);
+    }
+}
+
+.stTabs [aria-selected="true"] {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Target specific Streamlit-generated classes for chat input - Fixed Send Button */
+.st-emotion-cache-s1k4sy.e1d2x3se3 {
+    background: rgba(30, 42, 58, 0.9) !important;
+    border: 2px solid rgba(75, 156, 211, 0.4) !important;
+    border-radius: 20px !important;
+    padding: 12px 20px !important;
+    backdrop-filter: blur(20px) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    max-width: 600px !important;
+    width: 80% !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+.st-emotion-cache-s1k4sy.e1d2x3se3:focus-within {
+    border-color: #4B9CD3 !important;
+    box-shadow: 
+        0 0 0 4px rgba(75, 156, 211, 0.1) !important,
+        0 12px 40px rgba(75, 156, 211, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+/* Target the input field inside the container */
+.st-emotion-cache-s1k4sy.e1d2x3se3 input {
+    background: transparent !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    font-size: 15px !important;
+    outline: none !important;
+    padding: 10px 0 !important;
+    flex: 1 !important;
+    margin-right: 12px !important;
+}
+
+.st-emotion-cache-s1k4sy.e1d2x3se3 input::placeholder {
+    color: #9CA3AF !important;
+    font-style: italic !important;
+}
+
+/* Target the send button inside the container - Fixed Position */
+.st-emotion-cache-s1k4sy.e1d2x3se3 button {
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 12px 16px !important;
+    color: #FFFFFF !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 48px !important;
+    height: 48px !important;
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 16px rgba(75, 156, 211, 0.3) !important;
+}
+
+.st-emotion-cache-s1k4sy.e1d2x3se3 button:hover {
+    background: linear-gradient(135deg, #3A7CA5, #4B9CD3) !important;
+    transform: translateY(-50%) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(75, 156, 211, 0.4) !important;
+}
+
+.st-emotion-cache-s1k4sy.e1d2x3se3 button:active {
+    transform: translateY(-50%) scale(0.95) !important;
+}
+
+/* Additional Modern Enhancements */
+
+/* Glassmorphism cards for content sections */
+.glass-card {
+    background: linear-gradient(135deg, rgba(30, 42, 58, 0.8), rgba(15, 28, 46, 0.8));
+    border: 1px solid rgba(75, 156, 211, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(75, 156, 211, 0.5);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Gradient text effects */
+.gradient-text {
+    background: linear-gradient(135deg, #4B9CD3, #60A5FA, #93C5FD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover effects for interactive elements */
+.interactive-element {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.interactive-element:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(75, 156, 211, 0.3);
+}
+
+/* Success and error states */
+.success-state {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #10B981;
+}
+
+.error-state {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #EF4444;
+}
+
+/* Loading states */
+.loading-state {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-state::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
