@@ -357,10 +357,10 @@ copies or substantial portions of the Software.
 
 ### 🆘 **Getting Help**
 
-- **📚 Documentation**: Check the [Wiki](https://github.com/yourusername/sleep-analysis/wiki)
-- **🐛 Bug Reports**: [GitHub Issues](https://github.com/yourusername/sleep-analysis/issues)
-- **💬 Discussions**: [GitHub Discussions](https://github.com/yourusername/sleep-analysis/discussions)
-- **📧 Email**: support@sleepanalysis.com
+- **📚 Documentation**: Check the [Wiki](https://github.com/kahafsameer/sleep-analysis/wiki)
+- **🐛 Bug Reports**: [GitHub Issues](https://github.com/kahafsameer/sleep-analysis/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/kahafsameer/sleep-analysis/discussions)
+- **📧 Email**: sameerkahaf920@gmail.com
 
 ### 🌟 **Show Your Support**
 
@@ -400,5 +400,6 @@ If you find this project helpful, please consider:
 ---
 
 **Made with ☕ and 💤 by the Sleep Analysis Team**
+
 
 </div>
