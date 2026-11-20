@@ -193,7 +193,7 @@ python-dotenv==1.0.1
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/sleep-analysis.git
+git clone https://github.com/KahafSameer/sleep-analysis.git
 cd sleep-analysis
 
 # 2. Create virtual environment (recommended)
@@ -223,16 +223,6 @@ streamlit run app.py
    echo "GROQ_API_KEY=your_actual_api_key_here" > .env
    echo "DEBUG=false" >> .env
    ```
-
-### 🐳 **Docker Installation** (Optional)
-
-```bash
-# Build Docker image
-docker build -t sleep-analysis .
-
-# Run container
-docker run -p 8501:8501 -e GROQ_API_KEY=your_key sleep-analysis
-```
 
 ---
 
@@ -295,7 +285,7 @@ We welcome contributions from the community! Here's how you can help:
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/sleep-analysis.git
+git clone https://github.com/KahafSameer/sleep-analysis.git
 cd sleep-analysis
 
 # Create feature branch
@@ -303,7 +293,6 @@ git checkout -b feature/amazing-feature
 
 # Install development dependencies
 pip install -r requirements.txt
-pip install -r requirements-dev.txt  # If available
 
 # Make your changes and test
 python -m pytest tests/
